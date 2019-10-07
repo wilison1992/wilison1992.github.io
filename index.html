@@ -10,11 +10,9 @@ svg {
 </style>
 <body>
 <script type="module">
-<br></br>
 import {Runtime, Inspector} from "./runtime.js";
 import define from "./viz.js";
 
 const runtime = new Runtime();
 const main = runtime.module(define, Inspector.into(document.body));
-
 </script>
