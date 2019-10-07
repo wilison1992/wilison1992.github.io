@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Visualization</title>
+<link rel="stylesheet" type="text/css" href="./inspector.css">
+<style>
+svg {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+<body>
+<script type="module">
+
+import {Runtime, Inspector} from "./runtime.js";
+import define from "./viz.js";
+
+const runtime = new Runtime();
+const main = runtime.module(define, Inspector.into(document.body));
+
+</script>

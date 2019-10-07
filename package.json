@@ -1,0 +1,14 @@
+{
+  "name": "1213",
+  "main": "d/64f999ba7e8451ab.js",
+  "version": "528.0.0",
+  "homepage": "https://observablehq.com/@wilson666/untitled/8",
+  "author": {
+    "name": "Yiwen Lu",
+    "url": "https://observablehq.com/@wilson666"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}
