@@ -73,8 +73,8 @@ function formValue(form) {
 
   const svg = d3.select(DOM.svg(width, width))
       .style("width", "100%")
-      .style("height", "auto")
-      .style("font", "10px sans-serif");
+      .style("height", "100%")
+      .style("font", "12px sans-serif");
 
   const g = svg.append("g")
       .attr("transform", `translate(${width / 2},${width / 2})`);
@@ -147,7 +147,7 @@ function formValue(form) {
         .attrTween("transform", d => () => labelTransform(d.current))
         .on('end', function(d){ 
         g.append("svg:text")
-         .style("font-size","14px")
+         .style("font-size","18px")
          .attr("text-anchor", "middle")
          .text("Click here to go back")});
 
