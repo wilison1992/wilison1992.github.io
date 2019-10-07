@@ -2,16 +2,16 @@
 export default function define(runtime, observer) {
   const main = runtime.module();
   main.variable(observer()).define(["md"], function(md){return(
-md `Introduction:   
-Soil Types： what could be my soil typeFlora?  
-Flora：Which plant type are most common in my area?  
-Rain: What is suitable rainfall for my plants? 
+md `# Introduction:   
+## Soil Types： what could be my soil type?  
+## Flora：Which plant type are most common in my area?  
+## Rain: What is suitable rainfall for my plants? 
 `
 )});
   main.variable(observer("viewof object")).define("viewof object", ["form","html"], function(form,html){return(
 form(html`<form>
-  <div>Input Your Postcode</div>
-  <div><label><input name="postcode" type="text" value="3000"></label></div>
+  <div><font size="+2">Input Your Postcode</div>
+  <div><label><input name="postcode" type="text" value="3000" style="font-size:20px"></label></div>
  
 </form>`)
 )});
@@ -74,7 +74,7 @@ function formValue(form) {
   const svg = d3.select(DOM.svg(width, width))
       .style("width", "100%")
       .style("height", "100%")
-      .style("font", "12px sans-serif");
+      .style("font", "11px sans-serif");
 
   const g = svg.append("g")
       .attr("transform", `translate(${width / 2},${width / 2})`);
