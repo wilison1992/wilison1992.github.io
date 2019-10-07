@@ -72,7 +72,7 @@ function formValue(form) {
   root.each(d => d.current = d);
 
   const svg = d3.select(DOM.svg(width, width))
-      .style("width", "50%")
+      .style("width", "100%")
       .style("height", "auto")
       .style("font", "10px sans-serif");
 
