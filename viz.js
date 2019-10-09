@@ -3,10 +3,10 @@ export default function define(runtime, observer) {
   const main = runtime.module();
   main.variable(observer("viewof object")).define("viewof object", ["form","html"], function(form,html){return(
 form(html`<form>
-  <div><font size="+2">Input Your Postcode</div>
-  <div><label><input name="postcode" type="text" value="3000" style="font-size:20px"></label></div>
+  <div><font size="+2">&nbsp;&nbsp;&nbsp;&nbsp;Input Your Postcode</div>
+  <div><label>&nbsp;&nbsp;&nbsp;&nbsp;<input name="postcode" type="text" value="3000" style="font-size:20px"></label></div>
  
-</form>`)
+</form> <br><br><br>`)
 )});
   main.variable("object").define("object", ["Generators", "viewof object"], (G, _) => G.input(_));
   main.variable("postcode").define("postcode", ["object"], function(object){return(
