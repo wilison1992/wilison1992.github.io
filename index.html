@@ -3,11 +3,20 @@
 <title>Visualization</title>
 <link rel="stylesheet" type="text/css" href="./inspector.css">
 <style>
+
+
 svg {
     display: block;
     margin: 0 auto;
 }
+
+
+.divcss5{text-align:center} 
 </style>
+  
+<canvas id="canvas"></canvas>
+<div class="divcss5"><img src="./font_page.png" /></div> 
+  
 <script type="module">
 import {Runtime, Inspector} from "./runtime.js";
 import define from "./viz.js";
@@ -15,3 +24,5 @@ import define from "./viz.js";
 const runtime = new Runtime();
 const main = runtime.module(define, Inspector.into(document.body));
 </script>
+
+

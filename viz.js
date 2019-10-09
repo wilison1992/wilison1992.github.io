@@ -1,13 +1,6 @@
 // https://observablehq.com/@wilson666/untitled/8@528
 export default function define(runtime, observer) {
   const main = runtime.module();
-  main.variable(observer()).define(["md"], function(md){return(
-md `# Introduction:   
-## Soil Types： what could be my soil type?  
-## Flora：Which plant type are most common in my area?  
-## Rain: What is suitable rainfall for my plants? 
-`
-)});
   main.variable(observer("viewof object")).define("viewof object", ["form","html"], function(form,html){return(
 form(html`<form>
   <div><font size="+2">Input Your Postcode</div>
