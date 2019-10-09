@@ -177,7 +177,7 @@ function formValue(form) {
 }
 );
   main.variable("data1").define("data1", ["d3"], function(d3){return(
-d3.json('https://raw.githubusercontent.com/wilison1992/Project-Practice/master/React/cricle_viz.json')
+d3.json('https://raw.githubusercontent.com/wilison1992/Project-Practice/master/React/circle_viz.json')
 )});
   main.variable("data").define("data", ["data1","postcode"], function(data1,postcode)
 {
