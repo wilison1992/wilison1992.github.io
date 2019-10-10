@@ -12,15 +12,15 @@ form(html`<form>
 main.variable("checkpos").define("checkpos", ["data","md"], function(data,md){return(
   function checkpos(object){
     if (isNaN(Number(object['postcode'])) == true){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Postcode should be a Number between 3000 and 3999! Sample visualization will be provided!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">Postcode should be a Number between 3000 and 3999! Sample visualization will be provided!`
     }else if(object['postcode']== ""){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Please input your postcode! Sample visualization will be provided!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">Please input your postcode! Sample visualization will be provided!`
     }else if(object['postcode'] == data['Postcode']){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="green">We found data for your postcode! Explore your area!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">We found data for your postcode! Explore your area!`
     }else if (object['postcode'] < 4120 && object['postcode'] >= 2800){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Postcode near VIC, We provide closest postcode ${data['Postcode']} visualization for reference.`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">Postcode near VIC, We provide closest postcode ${data['Postcode']} visualization for reference.`
     }else if (object['postcode'] > 4120 || object['postcode'] < 2800){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Your Postcode is not a VIC Postcode! Sample visualization provided!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">Your Postcode is not a VIC Postcode! Sample visualization provided!`
     }
     else{
       return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Your Postcode is not not in our dataset! <br>&nbsp;&nbsp;&nbsp;&nbsp;Closest Postcode to you: ${data['Postcode']}
