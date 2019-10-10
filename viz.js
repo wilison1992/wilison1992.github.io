@@ -5,7 +5,7 @@ export default function define(runtime, observer) {
     md`## &nbsp;&nbsp;&nbsp;What is rainfall?`
 )});
   main.variable(observer()).define(["md"], function(md){return(
-  md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2">Rainfall is the minimum water needed for particular plants. Plants with less rainfall is easier to maintain.`
+  md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2">Rainfall is the minimum water needed for particular plants. Plants that require less water is easier to maintain.`
 )});
   main.variable(observer()).define(["md"], function(md){return(
     md`## &nbsp;&nbsp;&nbsp;Why we need Postcode?`
