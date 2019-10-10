@@ -9,24 +9,27 @@ export default function define(runtime, observer) {
 )});
   main.variable(observer("viewof object")).define("viewof object", ["form","html"], function(form,html){return(
 form(html`<form>
-  <br><br><div><font size="+3">&nbsp;&nbsp;&nbsp;&nbsp;Input Your Postcode</div>
+  <br><br><div><font size="+2">&nbsp;&nbsp;&nbsp;&nbsp;Input Your Postcode</div>
   <div><label>&nbsp;&nbsp;&nbsp;&nbsp;<input name="postcode" type="text" value="3000" style="font-size:20px"></label></div>
  
-</form> <br><br><br>`)
+</form><br>`)
 )});
 
 main.variable("checkpos").define("checkpos", ["data","md"], function(data,md){return(
   function checkpos(object){
-    if (object['postcode'] == data['Postcode']){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="green">Your Postcode is found! Explore your places!`
+    if (isNaN(Number(object['postcode'])) == true){
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Postcode should be Number! <br>&nbsp;&nbsp;&nbsp;&nbsp;Visualization not shown!`
     }else if(object['postcode']== ""){
-     return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Please Input Your Postcode!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Please Input Your Postcode!`
+    }else if(object['postcode'] == data['Postcode']){
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="green">Your Postcode is found! Explore your places!`
     }else if (object['postcode'] < 4120 && object['postcode'] >= 2800){
       return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not VIC Postcode! <br>&nbsp;&nbsp;&nbsp;&nbsp;But still near VIC, We
       provide closest postcode ${data['Postcode']} for reference.`
     }else if (object['postcode'] > 4120 || object['postcode'] < 2800){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not VIC Postcode! <br>&nbsp;&nbsp;&nbsp;&nbsp;Please Input correct VIC Postcode!`
-    }else{
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not VIC Postcode! <br>&nbsp;&nbsp;&nbsp;&nbsp;Don't trust this visualization! <br>&nbsp;&nbsp;&nbsp;&nbsp;Please Input correct VIC Postcode!`
+    }
+    else{
       return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not not in our dataset! <br>&nbsp;&nbsp;&nbsp;&nbsp;Closest Postcode to you: ${data['Postcode']}
       <br>&nbsp;&nbsp;&nbsp;&nbsp;This visualization will based on ${data['Postcode']}`
     }
