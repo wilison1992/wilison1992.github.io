@@ -24,7 +24,7 @@ form(html`<form>
 main.variable("checkpos").define("checkpos", ["data","md"], function(data,md){return(
   function checkpos(object){
     if (isNaN(Number(object['postcode'])) == true){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Postcode should be a Number between 3000 and 3999! Visualization not shown!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Postcode should be a Number between 3000 and 3999! Sample visualization will be provided!`
     }else if(object['postcode']== ""){
       return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Please input your postcode! Sample visualization will be provided!`
     }else if(object['postcode'] == data['Postcode']){
@@ -214,6 +214,8 @@ main.variable("pos_list").define("pos_list", function(){return(
   )});
     main.variable("data").define("data", ["pos_list","postcode","data1"], function(pos_list,postcode,data1)
   {
+    if (isNaN(postcode) == true){
+      return data1['3000']}
     if (pos_list.indexOf(postcode) >= 0){
     return data1[postcode]
     }else{
