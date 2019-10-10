@@ -14,14 +14,14 @@ main.variable("checkpos").define("checkpos", ["data","md"], function(data,md){re
     if (object['postcode'] == data['Postcode']){
       return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="green">Your Postcode is found! Explore your places!`
     }else if(object['postcode']== ""){
-     return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Please Input Your Postcode`
+     return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Please Input Your Postcode!`
     }else if (object['postcode'] < 4120 && object['postcode'] >= 2800){
-      return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not VIC Postcode. <br>&nbsp;&nbsp;&nbsp;But still near VIC, We
-      provide closest postcode ${data['Postcode']} for reference`
+      return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not VIC Postcode! <br>&nbsp;&nbsp;&nbsp;But still near VIC, We
+      provide closest postcode ${data['Postcode']} for reference.`
     }else if (object['postcode'] > 4120 || object['postcode'] < 2800){
-      return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not VIC Postcode. <br>&nbsp;&nbsp;&nbsp;Please Input correct VIC Postcode`
+      return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not VIC Postcode! <br>&nbsp;&nbsp;&nbsp;Please Input correct VIC Postcode!`
     }else{
-      return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not not in our dataset. <br>&nbsp;&nbsp;&nbsp;Closest Postcode to you: ${data['Postcode']}
+      return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not not in our dataset! <br>&nbsp;&nbsp;&nbsp;Closest Postcode to you: ${data['Postcode']}
       <br>&nbsp;&nbsp;&nbsp;This visualization will based on ${data['Postcode']}`
     }
   }
