@@ -1,18 +1,6 @@
 // https://observablehq.com/@wilson666/untitled/8@528
 export default function define(runtime, observer) {
   const main = runtime.module();
-  main.variable(observer()).define(["md"], function(md){return(
-    md`## &nbsp;&nbsp;&nbsp;What does rainfall mean?`
-)});
-  main.variable(observer()).define(["md"], function(md){return(
-  md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2">Rainfall shows the minimum water requirement for the plants. Plants that require less water is easier to maintain.`
-)});
-  main.variable(observer()).define(["md"], function(md){return(
-    md`## &nbsp;&nbsp;&nbsp;Why we need your Postcode?`
-)});
-  main.variable(observer()).define(["md"], function(md){return(
-  md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2"> Our visualization is based on different regions only in __VIC__. Different suburbs may have various flora. By providing postcode, data specific to your area will be shown.`
-)});
   main.variable(observer("viewof object")).define("viewof object", ["form","html"], function(form,html){return(
 form(html`<form>
   <br><br><div><font size="+2">&nbsp;&nbsp;&nbsp;&nbsp;Postcode</div>
@@ -246,6 +234,19 @@ data => {
       .size([2 * Math.PI, root.height + 1])
     (root);
 }
+)});
+
+main.variable(observer()).define(["md"], function(md){return(
+  md`### &nbsp;&nbsp;&nbsp;What does rainfall mean?`
+)});
+main.variable(observer()).define(["md"], function(md){return(
+md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1">Rainfall shows the minimum water requirement for the plants. Plants that require less water is easier to maintain.`
+)});
+main.variable(observer()).define(["md"], function(md){return(
+  md`### &nbsp;&nbsp;&nbsp;Why we need your Postcode?`
+)});
+main.variable(observer()).define(["md"], function(md){return(
+md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1"> Our visualization is based on different regions only in __VIC__. Different suburbs may have various flora. By providing postcode, data specific to your area will be shown.`
 )});
   main.variable("color").define("color", ["d3","data"], function(d3,data){return(
 d3.scaleOrdinal().range(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
