@@ -2,16 +2,16 @@
 export default function define(runtime, observer) {
   const main = runtime.module();
   main.variable(observer()).define(["md"], function(md){return(
-    md`## &nbsp;&nbsp;&nbsp;What is rainfall?`
+    md`## &nbsp;&nbsp;&nbsp;What does rainfall mean?`
 )});
   main.variable(observer()).define(["md"], function(md){return(
-  md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2">Rainfall is the minimum water needed for particular plants. Plants that require less water is easier to maintain.`
+  md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2">Rainfall shows the minimum water requirement for the plants. Plants that require less water is easier to maintain.`
 )});
   main.variable(observer()).define(["md"], function(md){return(
-    md`## &nbsp;&nbsp;&nbsp;Why we need Postcode?`
+    md`## &nbsp;&nbsp;&nbsp;Why we need your Postcode?`
 )});
   main.variable(observer()).define(["md"], function(md){return(
-  md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2"> Our visualization is based on different regions only in __VIC__. Different suburbs may have various flora. By providing postcode, visualization in your places will be shown.`
+  md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2"> Our visualization is based on different regions only in __VIC__. Different suburbs may have various flora. By providing postcode, data specific to your area will be shown.`
 )});
   main.variable(observer("viewof object")).define("viewof object", ["form","html"], function(form,html){return(
 form(html`<form>
@@ -24,15 +24,15 @@ form(html`<form>
 main.variable("checkpos").define("checkpos", ["data","md"], function(data,md){return(
   function checkpos(object){
     if (isNaN(Number(object['postcode'])) == true){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Postcode should be Number! Visualization not shown!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Postcode should be a Number between 3000 and 3999! Visualization not shown!`
     }else if(object['postcode']== ""){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Please Input Your Postcode! Sample visualization provided!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Please input your postcode! Sample visualization will be provided!`
     }else if(object['postcode'] == data['Postcode']){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="green">Your Postcode is found! Explore your places!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="green">We found data for your postcode! Explore your area!`
     }else if (object['postcode'] < 4120 && object['postcode'] >= 2800){
       return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Postcode near VIC, We provide closest postcode ${data['Postcode']} visualization for reference.`
     }else if (object['postcode'] > 4120 || object['postcode'] < 2800){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Your Postcode is not VIC Postcode! Sample visualization provided!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Your Postcode is not a VIC Postcode! Sample visualization provided!`
     }
     else{
       return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Your Postcode is not not in our dataset! <br>&nbsp;&nbsp;&nbsp;&nbsp;Closest Postcode to you: ${data['Postcode']}
