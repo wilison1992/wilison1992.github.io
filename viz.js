@@ -1,9 +1,15 @@
 // https://observablehq.com/@wilson666/untitled/8@528
 export default function define(runtime, observer) {
   const main = runtime.module();
+  main.variable(observer()).define(["md"], function(md){return(
+    md`## &nbsp;&nbsp;&nbsp;Why we need Postcode?`
+)});
+  main.variable(observer()).define(["md"], function(md){return(
+  md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2"> Our visualization is based on different regions. Different suburbs may have various flora. By providing us potcode, we can provide visualization in your places.`
+)});
   main.variable(observer("viewof object")).define("viewof object", ["form","html"], function(form,html){return(
 form(html`<form>
-  <div><font size="+2">&nbsp;&nbsp;&nbsp;&nbsp;Input Your Postcode</div>
+  <br><br><div><font size="+3">&nbsp;&nbsp;&nbsp;&nbsp;Input Your Postcode</div>
   <div><label>&nbsp;&nbsp;&nbsp;&nbsp;<input name="postcode" type="text" value="3000" style="font-size:20px"></label></div>
  
 </form> <br><br><br>`)
@@ -12,17 +18,17 @@ form(html`<form>
 main.variable("checkpos").define("checkpos", ["data","md"], function(data,md){return(
   function checkpos(object){
     if (object['postcode'] == data['Postcode']){
-      return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="green">Your Postcode is found! Explore your places!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="green">Your Postcode is found! Explore your places!`
     }else if(object['postcode']== ""){
-     return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Please Input Your Postcode!`
+     return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Please Input Your Postcode!`
     }else if (object['postcode'] < 4120 && object['postcode'] >= 2800){
-      return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not VIC Postcode! <br>&nbsp;&nbsp;&nbsp;But still near VIC, We
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not VIC Postcode! <br>&nbsp;&nbsp;&nbsp;&nbsp;But still near VIC, We
       provide closest postcode ${data['Postcode']} for reference.`
     }else if (object['postcode'] > 4120 || object['postcode'] < 2800){
-      return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not VIC Postcode! <br>&nbsp;&nbsp;&nbsp;Please Input correct VIC Postcode!`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not VIC Postcode! <br>&nbsp;&nbsp;&nbsp;&nbsp;Please Input correct VIC Postcode!`
     }else{
-      return md`&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not not in our dataset! <br>&nbsp;&nbsp;&nbsp;Closest Postcode to you: ${data['Postcode']}
-      <br>&nbsp;&nbsp;&nbsp;This visualization will based on ${data['Postcode']}`
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+2" color="red">Your Postcode is not not in our dataset! <br>&nbsp;&nbsp;&nbsp;&nbsp;Closest Postcode to you: ${data['Postcode']}
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;This visualization will based on ${data['Postcode']}`
     }
   }
   )});
