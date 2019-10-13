@@ -22,7 +22,7 @@ main.variable("checkpos").define("checkpos", ["data","md"], function(data,md){re
     }else if (object['postcode'] > 4120 || object['postcode'] < 2800){
       return md`&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">Your Postcode is not a VIC Postcode! Sample visualization provided!`
     }
-    else{
+    else{  
       return md`&nbsp;&nbsp;&nbsp;&nbsp;<font size="+1" color="red">Your Postcode is not not in our dataset! <br>&nbsp;&nbsp;&nbsp;&nbsp;Closest Postcode to you: ${data['Postcode']}
       <br>&nbsp;&nbsp;&nbsp;&nbsp;This visualization will based on ${data['Postcode']}`
     }
@@ -91,7 +91,7 @@ function formValue(form) {
 
   const svg = d3.select(DOM.svg(width, width))
       .style("width", "100%")
-      .style("height", "100%")
+      .style("height", "50%")
       .style("font", "11px sans-serif");
 
   const g = svg.append("g")

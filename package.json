@@ -10,5 +10,5 @@
   "type": "module",
   "peerDependencies": {
     "@observablehq/runtime": "4"
-  }
+  } 
 }
