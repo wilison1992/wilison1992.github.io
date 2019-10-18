@@ -17,9 +17,9 @@ main.variable("checkpos").define("checkpos", ["data","md"], function(data,md){re
       return md`&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">Please input your postcode! Sample visualization will be provided!`
     }else if(object['postcode'] == data['Postcode']){
       return md`&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">We found data for your postcode! Explore your area!`
-    }else if (object['postcode'] < 4120 && object['postcode'] >= 2800){
-      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">Postcode near VIC, We provide closest postcode ${data['Postcode']} visualization for reference.`
-    }else if (object['postcode'] > 4120 || object['postcode'] < 2800){
+    }else if (object['postcode'] <= 3999 && object['postcode'] >= 3000){
+      return md`&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">This data is not avaliable, We provide closest postcode ${data['Postcode']} visualization for reference.`
+    }else if (object['postcode'] > 3999 || object['postcode'] < 3000){
       return md`&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">Your Postcode is not a VIC Postcode! Sample visualization provided!`
     }
     else{  
